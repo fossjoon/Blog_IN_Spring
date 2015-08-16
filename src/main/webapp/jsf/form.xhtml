@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<h:html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Welcome to FOSSjoon PrimeFaces_Spring_Hibernate_Project</title>
+	<h:outputStylesheet library="css" name="style.css" />
+	<h:outputStylesheet library="css" name="demo.css" />
+</h:head>
+<h:body>
+	<div class="container">
+		<!-- freshdesignweb top bar -->
+		<div class="freshdesignweb-top">
+			<h:outputLink value="index.xhtml" >Home</h:outputLink> 
+			<span class="right"> 
+			<h:outputLink value="index.xhtml" >
+					<strong>Back to the  Article</strong>
+				</h:outputLink>
+			</span>
+			<div class="clr"></div>
+		</div>
+		<header>
+		<h1>
+			<span>FOSSmaniac</span> Beautiful Registration Form with JSF
+			and CSS3
+		</h1>
+		</header>
+		<div class="form">
+			<h:form id="contactform">
+				<p class="contact">
+					<label for="name">Name</label>
+				</p>
+				<h:inputText id="userName"  required=""
+					placeholder="First and last name" />
+				<!-- <h:message for="First and last name"  /> -->
+				<!-- <input id="name" name="name" placeholder="First and last name" required="" tabindex="1" type="text">  -->
+
+				<p class="contact">
+					<label for="email">Email</label>
+				</p>
+				<h:inputText id="email" ></h:inputText>
+
+				<!-- <h:inputText id="email" name="email" placeholder="example@domain.com" required="" type="email"> </h:inputText> -->
+
+				<p class="contact">
+					<label for="username">Create a username</label>
+				</p>
+				<h:inputText id="username" name="username" placeholder="username"
+					required="" tabindex="2" type="text">
+				</h:inputText>
+
+				<p class="contact">
+					<h:outputLabel for="password">Create a password</h:outputLabel>
+				</p>
+				<h:inputText type="password" id="password" name="password"
+					required="">
+				</h:inputText>
+				<p class="contact">
+					<label for="repassword">Confirm your password</label>
+				</p>
+				<h:inputText type="password" id="repassword" name="repassword"
+					required="">
+				</h:inputText>
+
+				<p:fieldset>
+					<h:outputLabel>Birthday</h:outputLabel>
+					<h:outputLabel class="month">
+						<h:selectOneMenu class="select-style" name="BirthMonth">
+							<f:selectItem Value="" itemLabel="Month" />
+							<f:selectItem Value="01" itemLabel="January" />
+							<f:selectItem Value="02" itemLabel="February" />
+							<f:selectItem Value="03" itemLabel="March" />
+							<f:selectItem Value="04" itemLabel="April" />
+							<f:selectItem Value="05" itemLabel="May" />
+							<f:selectItem Value="06" itemLabel="June" />
+							<f:selectItem Value="07" itemLabel="July" />
+							<f:selectItem Value="08" itemLabel="August" />
+							<f:selectItem Value="09" itemLabel="September" />
+							<f:selectItem Value="10" itemLabel="October" />
+							<f:selectItem Value="11" itemLabel="November" />
+							<f:selectItem Value="12" itemLabel="December" />
+						</h:selectOneMenu>
+					</h:outputLabel>
+					<h:outputLabel>Day<h:inputText class="birthday"
+							maxlength="2" name="BirthDay" required=""></h:inputText>
+					</h:outputLabel>
+					<h:outputLabel>Year <h:inputText class="birthyear"
+							maxlength="4" name="BirthYear" size="20" required=""
+							placeholder="Year"></h:inputText>
+					</h:outputLabel>
+				</p:fieldset>
+				<select class="select-style gender" name="gender">
+					<option value="select">i am..</option>
+					<option value="m">Male</option>
+					<option value="f">Female</option>
+					<option value="others">Other</option>
+				</select>
+				<br> </br>
+
+				<p class="contact">
+					<label for="phone">Mobile phone</label>
+				</p>
+				<h:inputText id="phone" name="phone" placeholder="phone number"
+					required="" type="text"></h:inputText>
+				<h:commandButton class="buttom" name="submit" id="submit"
+					tabindex="5" value="Sign me up!" type="submit"></h:commandButton>
+			</h:form>
+		</div>
+	</div>
+</h:body>
+</h:html>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://www.springframework.org/schema/beans"
+    xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://www.springframework.org/schema/aop  http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+	<context:component-scan base-package="com.spring.joon" />
+	
+    <!-- Hibernate 4 SessionFactory Bean definition --> 
+   <beans:bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+        <beans:property name="jndiName" value="java:comp/env/jdbc/MyLocalDB"/>
+    </beans:bean>
+   
+    <beans:bean id="sessionFactory"  class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <beans:property name="dataSource" ref="dataSource" />
+        <beans:property name="annotatedClasses">
+            <beans:list>
+                <beans:value>com.spring.joon.model.Customer</beans:value>
+            </beans:list>
+        </beans:property>
+        <beans:property name="hibernateProperties">
+            <beans:props>
+                <beans:prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect
+                </beans:prop>
+                <beans:prop key="hibernate.connection.datasource">java:comp/env/jdbc/MyLocalDB</beans:prop>
+                <beans:prop key="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</beans:prop>
+                <beans:prop key="hibernate.show_sql">true</beans:prop>
+                <beans:prop key="hibernate.hbm2ddl.auto">create</beans:prop>
+                <beans:prop key="hibernate.use_sql_comments">true</beans:prop>
+                <beans:prop key="hibernate.current_session_context_class">thread</beans:prop>
+            </beans:props>
+        </beans:property>
+    </beans:bean>
+    <beans:bean id="customerDAO" class="com.spring.joon.dao.CustomerDAO">
+        <beans:property name="sessionFactory"
+            ref="sessionFactory" />
+    </beans:bean>
+    <beans:bean id="customerService" class="com.spring.joon.service.CustomerService">
+        <beans:property name="customerDAO" ref="customerDAO"></beans:property>
+    </beans:bean>
+
+    <!-- <aop:aspectj-autoproxy proxy-target-class="false" /> -->
+
+    <!-- <context:component-scan base-package="com.spring.action" /> -->
+    <tx:annotation-driven transaction-manager="transactionManager" />
+    <beans:bean id="transactionManager"
+        class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <beans:property name="sessionFactory"
+            ref="sessionFactory" />
+    </beans:bean>
+</beans:beans>

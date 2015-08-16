@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<h:html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Welcome to FOSSjoon PrimeFaces_Spring_Hibernate_Project</title>
+	<h:outputStylesheet library="css" name="menu.css" />
+</h:head>
+<h:body>
+<ui:insert name="header">
+            <ui:include src="/jsf/header.xhtml" />
+        </ui:insert>
+    <h:form>
+        <p:button value="institute" href="institute.xhtml"></p:button>
+          <p:button value="Management" href="institute.xhtml"></p:button>
+    </h:form>
+</h:body>
+</h:html>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	>
+<h:body>
+	<ui:composition template="/WEB-INF/tags/layout.xhtml">
+		<ui:define name="content">
+			
+			
+			
+				<h:form id="form1" style="">
+					<p:growl id="messages" showDetail="true" />
+
+
+					<p:panel id="panel">
+					<br/>
+   					
+
+
+						<h:panelGrid id="display" columns="2" cellpadding="4">
+
+							<h:outputText value="Customer" for="customer"
+								style="padding-left: 30px; padding-right: 30px;" />
+
+							<p:inputText id="customer" value="#{orderMB.bean.customer}"
+								required="true" label="Customer"
+								requiredMessage="Required" />
+								
+							<h:outputText value="Reference" for="reference"
+								style="padding-left: 30px; padding-right: 30px;" />	
+								
+						    <p:inputText id="reference" value="#{orderMB.bean.reference}"
+								required="true" label="Reference"
+								requiredMessage="Required" />
+								
+								
+						    <h:outputLabel for="Items" value="Items " />  
+						    
+        					<p:selectManyMenu id="Items" value="#{orderMB.listItem}" showCheckbox="true" style="width:250px;height:200px">  
+            					<f:selectItems value="#{orderMB.allItems}" var="item" itemLabel="#{item.product}" itemValue="#{item.id}" />  
+        					</p:selectManyMenu> 
+								
+						 
+							
+
+							
+
+							<p:outputPanel layout="block" style="text-align:center">
+							<br />
+							<br />
+							<p:commandButton value="Reset" styleClass=""
+								update=":form1:panel" process="@this"
+								actionListener="#{orderMB.reset}" />
+							<p:commandButton value="Save" styleClass=""
+								actionListener="#{orderMB.save}"
+								update=":form1:messages, :form1:panel" />
+						</p:outputPanel>
+
+
+						
+						</h:panelGrid>
+
+
+
+
+
+
+						
+
+
+
+
+					</p:panel>
+
+				</h:form> 
+			
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

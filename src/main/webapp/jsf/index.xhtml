@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<h:html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Welcome to FOSSjoon PrimeFaces_Spring_Hibernate_Project</title>
+	<h:outputStylesheet library="css" name="menu.css" />
+</h:head>
+<h:body>
+<!-- Header Facelets -->
+        <ui:insert name="header">
+            <ui:include src="/jsf/header.xhtml" />
+        </ui:insert>
+	<div id="container">
+		<h:form>
+		<p:growl id="messages" showDetail="true"></p:growl>
+			<h:panelGrid>
+				<h:inputText id="userName" value="#{customerMB.userName}" size="20"
+					required="true" label="UserName" />
+				<h:message for="userName" style="color:red" />
+				<!-- <p>
+					<a href="#">Forgot your password?</a>
+				</p> -->
+				<h:inputSecret id="password" value="#{customerMB.password_L}"
+					size="20" required="true" label="Password" />
+				<h:message for="password" style="color:red" />
+				<div id="lower"></div>
+				<p:selectBooleanCheckbox></p:selectBooleanCheckbox>
+				
+				<h:commandButton value="SignIn" action="#{customerMB.addCustomer}" />
+			</h:panelGrid>
+		</h:form>
+		<h:form>
+			<h:panelGrid>
+				<h:inputText id="fullName" value="#{customerMB.fullName}" size="20"
+					required="true" label="fullName" />
+				<h:message for="fullName" style="color:red" />
+				<h:inputText id="email" value="#{customerMB.email}" size="20"
+					required="true" label="email" />
+				<h:message for="email" style="color:red" />
+				<h:inputSecret id="password_S" value="#{customerMB.password_S}"
+					size="20" required="true" label="password_S" />
+				<h:message for="password_S" style="color:red" />
+				<h:commandButton value="SignUp" action="#{customerMB.form}" />
+			</h:panelGrid>
+		</h:form>
+	</div>
+	<!-- </div> -->
+</h:body>
+</h:html>

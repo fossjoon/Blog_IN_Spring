@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<h:html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<ui:param name="root" value="#{request.contextPath}/" />
+	<meta http-equiv="X-UA-Compatible" content="EmulateIE8" />
+	<meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="shortcut icon" type="image/png"
+		href="http://www.primefaces.org/showcase/resources/main/images/favicon.png"></link>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"></link>
+
+	<!-- Optional theme -->
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"></link>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+	<!-- Overriding default CSS of primefaces -->
+	<style>
+.ui-widget {
+	font-size: 15px;
+}
+</style>
+	<title>Spring PrimeFaces Tutorial</title>
+</h:head>
+<h:body>
+	<div class="container">
+
+		<!-- Header Facelets -->
+		<ui:insert name="header">
+			<ui:include src="/WEB-INF/tags/header.xhtml" />
+		</ui:insert>
+
+		<hr></hr>
+
+		<div class="container-fluid" style="min-height: 700px">
+			<!-- Content Facelets -->
+			
+			<ui:insert name="content">
+			     
+			</ui:insert>
+			<h:outputLabel>Hello world
+         	A <p>or paragraph tag will tell the web browser that you
+					want to start a new paragraph. Unlike a word processing document,
+					pressing the ‘enter’ key will have no effect. You could press it
+					hundreds of times and you still wouldn’t get a new paragraph.</p>
+    <small>
+				Almost all of the computer programming these days is done
+					with high-level programming languages. There are lots of them and
+					some are quite old. COBOL, FORTRAN, and Lisp were devised in the
+					1950s!!! As you will see, high-level languages make it easier to
+					describe the pieces of the program you are creating. They help by
+					letting you concentrate on what you are trying to do rather than on
+					how you represent it in a specific computer architecture. They
+					abstract away the specifics of the microprocessor in your computer.
+					And, all high-level languages come with large sets of common stuff
+					you need to do, called libraries. In this introduction, you will
+					work with two computer programming languages: Logo and Java. Logo
+					comes from Bolt, Beranek Newman (BBN) and Massachusetts Institute
+					of Technology (MIT). Seymour Papert, a scientist at MIT's
+					</small>
+					<em> <strong>This text is italicized and bold</strong> </em>
+					<br></br>
+					<p>
+					<small>
+					Artificial Intelligence Laboratory, and co-workers championed this
+					computer programming language in the 70s. More research of its use
+					in educational settings exists than for any other programming
+					language. In fact, the fairly new Scratch Programming Environment
+					(also from MIT) consists of a modern graphical user interface on
+					top of Logo-like functionality. Java is a fairly recent programming
+					language. It appeared in 1995 just as the Internet was starting to
+					get lots of attention. Java was invented by James Gosling, working
+					at Sun Microsystems. It's sort-of a medium-level language. One of
+					the big advantages of learning Java is that there is a lot of
+					software already written ( see: Java Class Library) which will help
+					you write graphical programs that run on the Internet. You get to
+					take advantage of software that thousands of programmers have
+					already written. Java is used in a variety of applications, from
+					mobile phones to massive Internet data manipulation. You get to
+					work with window objects, Internet connection objects, database
+					access objects and thousands of others. Java is the language used
+					to write Android apps. So, why do these lessons start with the Logo
+					programming language? No other language has the depth of research
+					devoted to its use in educational settings. Hundreds of books and
+					research papers have been written regarding its use in the
+					classroom. Cynthia Solomon, who started MIT's Logo Group with Dr.
+					Papert, has put together a comprehensive website on Logo:
+					logothings.wikispaces.com. I like using the Logo language to teach
+					introductory programming because it is very easy to learn. The
+					faster you get to write interesting computer programs the more fun
+					you will have. And... having fun is important! But do not let
+					Logo's simplicity fool you into thinking it is just a toy
+					programming language. Logo is a derivative of the Lisp programming
+					language, a very powerful language still used today to tackle some
+					of the most advanced research being performed. Brian Harvey shows
+					the power of Logo in his Computer Science Logo Style series of
+					books. Volume 3: Beyond Programming covers six college-level
+					computer science topics with Logo. Both Logo and Java have the same
+					sort of stuff needed to write computer programs. Each has the
+					ability to manipulate objects (for example, arithmetic functions
+					for working with numbers). Each lets you compare objects and do a
+					variety of things depending on the outcome of the comparison. Most
+					importantly, they let you define named procedures. Named procedures
+					are lists of built-in instructions and other named procedures. The
+					abstraction of naming stuff lets you write programs in a language
+					you yourself define. This is the stuff that programming is really
+					all about, as you will see. Just to give you a feel for what
+					programming is like in a high-level language, here's a program that
+					greets us, pretending to know English. print [Hello world!] This is
+					one of the simplest programs that can be written in most high-level
+					languages. PRINT is a command in Logo When it is performed, it
+					takes whatever follows it and displays it. The "Hello world"
+					program is famous; checkout its description on Wikipedia by
+					clicking here. In addition to commands, Logo has operators that
+					output some sort of result. Although it's a bit contrived, here is
+					a program that displays the product of a constant number (ten) and
+					a random number in the range of zero through fourteen. print
+					product 10 (random 15) In this source code, the PRINT command's
+					input is the output of the PRODUCT operator. PRODUCT multiplies
+					whatever follows it by whatever follows that and outputs the
+					result. So, PRODUCT needs two inputs. RANDOM is an operator that
+					outputs a number that is greater than or equal to zero (0) and less
+					than the number following it. So, PRODUCT gets its second input
+					from the output of RANDOM. Confusing?</small></p>
+			</h:outputLabel>
+		</div>
+        <h:outputLabel>Hello WORLD UPPERCA</h:outputLabel>
+		<!-- Footer Facelets -->
+		<ui:insert name="footer">
+			<ui:include src="/WEB-INF/tags/footer.xhtml" />
+		</ui:insert>
+
+	</div>
+</h:body>
+</h:html>
